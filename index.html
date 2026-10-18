@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="TICOH GENERALI helps you process media files into convenient video and audio formats, with supported social-platform integrations clearly identified.">
+  <meta property="og:title" content="TICOH GENERALI — Media Tools">
+  <meta property="og:description" content="Simple, fast media tools for video and audio.">
+  <title>TICOH GENERALI — Video and Audio Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="TICOH GENERALI home">
+      <span class="brand-mark">TG</span><span class="brand-name">TICOH <b>GENERALI</b></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#how">How it works</a><a href="#platforms">Platforms</a><a href="#tools">Media tools</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="#tools">Get started <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="eyebrow"><span class="live-dot"></span> YOUR MEDIA, YOUR WAY</div>
+      <h1>Make your media<br>work <span class="gradient-text">for you.</span></h1>
+      <p class="hero-copy">Simple video and audio tools for the content you own or have permission to use. Convert, compress, and prepare media in just a few clicks.</p>
+      <div class="url-card">
+        <label for="mediaUrl">SOCIAL MEDIA LINK</label>
+        <div class="url-row">
+          <span class="link-icon">↗</span>
+          <input id="mediaUrl" type="url" placeholder="Paste your video link here…" autocomplete="url">
+          <button class="primary-btn" id="analyzeBtn">Analyze link <span>→</span></button>
+        </div>
+        <div class="url-foot"><span><i class="shield">✓</i> Link validation</span><span>Facebook · Instagram · TikTok · YouTube</span></div>
+        <div id="analyzeResult" class="notice hidden" role="status" aria-live="polite"></div>
+      </div>
+      <div class="hero-note"><span class="sparkle">✦</span> No account needed for basic media tools</div>
+      <div class="platform-strip" id="platforms">
+        <div class="platform-item"><span class="platform-icon facebook">f</span><span><b>Facebook</b><small>Link recognition</small></span></div>
+        <div class="platform-item"><span class="platform-icon instagram">◎</span><span><b>Instagram</b><small>Link recognition</small></span></div>
+        <div class="platform-item"><span class="platform-icon tiktok">♪</span><span><b>TikTok</b><small>Link recognition</small></span></div>
+        <div class="platform-item"><span class="platform-icon youtube">▶</span><span><b>YouTube</b><small>Link recognition</small></span></div>
+      </div>
+    </section>
+
+    <section class="section-wrap tools-section" id="tools">
+      <div class="section-heading">
+        <div><div class="eyebrow">MEDIA TOOLKIT</div><h2>Convert it. <span class="gradient-text">Keep it.</span></h2></div>
+        <p>Upload a media file you own or are authorized to use, then choose an output that suits your device and data plan.</p>
+      </div>
+      <div class="tool-grid">
+        <article class="tool-card">
+          <div class="tool-top"><span class="tool-icon audio-icon">♫</span><span class="tag">AUDIO</span></div>
+          <h3>Extract audio</h3><p>Turn an eligible video into an audio file for offline listening.</p>
+          <form id="audioForm" class="process-form">
+            <label class="file-picker" for="audioFile"><span>＋</span><b id="audioFileLabel">Choose video or audio file</b><small>MP4, MOV, WebM, MP3, WAV and more</small></label>
+            <input id="audioFile" name="media" type="file" accept="video/*,audio/*,.mkv,.m4a,.flac" required hidden>
+            <div class="select-row">
+              <label>Format<select name="format"><option value="mp3">MP3</option><option value="m4a">M4A</option><option value="wav">WAV</option></select></label>
+              <label>Quality<select name="quality"><option value="low">Low — smaller</option><option value="medium" selected>Balanced</option><option value="high">High</option></select></label>
+            </div>
+            <button class="primary-btn full-btn" type="submit">Convert audio <span>→</span></button>
+            <div class="form-status" aria-live="polite"></div>
+          </form>
+        </article>
+        <article class="tool-card">
+          <div class="tool-top"><span class="tool-icon video-icon">▣</span><span class="tag">VIDEO</span></div>
+          <h3>Compress video</h3><p>Reduce file size for easier sharing while balancing clarity and quality.</p>
+          <form id="videoForm" class="process-form">
+            <label class="file-picker" for="videoFile"><span>＋</span><b id="videoFileLabel">Choose a video file</b><small>MP4, MOV, WebM, MKV and more</small></label>
+            <input id="videoFile" name="media" type="file" accept="video/*,.mkv" required hidden>
+            <div class="select-row">
+              <label>Format<select name="format"><option value="mp4">MP4</option><option value="webm">WebM</option></select></label>
+              <label>Size & quality<select name="quality"><option value="low">Smallest</option><option value="medium" selected>Balanced</option><option value="high">Higher quality</option></select></label>
+            </div>
+            <button class="primary-btn full-btn" type="submit">Compress video <span>→</span></button>
+            <div class="form-status" aria-live="polite"></div>
+          </form>
+        </article>
+      </div>
+      <p class="privacy-note"><span>♧</span> Files are processed on the server and temporary files are automatically removed. Upload only content you have the right to use.</p>
+    </section>
+
+    <section class="how-section" id="how"><div class="section-wrap">
+      <div class="section-heading centered"><div><div class="eyebrow">THREE SIMPLE STEPS</div><h2>Easy from start <span class="gradient-text">to finish.</span></h2></div></div>
+      <div class="steps-grid">
+        <div class="step"><span class="step-number">01</span><div class="step-icon">↗</div><h3>Add your media</h3><p>Paste a supported social link to check its platform, or upload a media file you are allowed to process.</p></div>
+        <div class="step"><span class="step-number">02</span><div class="step-icon">⚙</div><h3>Choose your format</h3><p>Select the available output format and quality that best fits your needs.</p></div>
+        <div class="step"><span class="step-number">03</span><div class="step-icon">↓</div><h3>Get your file</h3><p>Process the file and download the resulting media when it is ready.</p></div>
+      </div>
+    </div></section>
+
+    <section class="faq-section section-wrap" id="faq">
+      <div class="section-heading"><div><div class="eyebrow">GOOD TO KNOW</div><h2>Frequently asked <span class="gradient-text">questions.</span></h2></div></div>
+      <details><summary>Can I download directly from all four social platforms?</summary><p>The link checker currently recognizes Facebook, Instagram, TikTok, and YouTube URLs. Direct downloads require a separately configured, authorized integration for each platform. This starter project does not scrape those sites or bypass their restrictions.</p></details>
+      <details><summary>Can I remove a watermark?</summary><p>This site does not remove creator watermarks or attribution. Use watermark-free source files only when you have the rights and permission to do so.</p></details>
+      <details><summary>How do I get smaller files?</summary><p>Choose a lower quality setting when converting. Smaller files generally trade some visual or audio detail for reduced storage and data use.</p></details>
+      <details><summary>Are my uploads kept forever?</summary><p>No. Temporary uploads and generated output files are automatically deleted by the server after their cleanup window. Do not upload confidential or sensitive files.</p></details>
+    </section>
+
+    <section class="closing-cta section-wrap"><div class="cta-panel"><div class="eyebrow">TICOH GENERALI</div><h2>Your media. <span class="gradient-text">Made simpler.</span></h2><p>Practical tools for files you are authorized to use.</p><a class="primary-btn" href="#tools">Try media tools <span>→</span></a></div></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">TG</span><span class="brand-name">TICOH <b>GENERALI</b></span></a><p>© <span id="year"></span> TICOH GENERALI. Use media responsibly.</p><div><a href="#faq">FAQ</a><a href="mailto:contact@example.com">Contact</a></div></footer>
+</body>
+</html>
